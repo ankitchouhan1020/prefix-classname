@@ -1,6 +1,6 @@
 {
   "name": "prefix-codemod",
-  "description": "Adds unique prefix to classname in jsx files.",
+  "description": "Add unique prefix to classname in jsx files.",
   "version": "1.0.0",
   "repository": "git@github.com:ankitchouhan1020/prefix-classname.git",
   "author": "Ankit Chouhan <ankitchouhan1020@gmail.com>",
