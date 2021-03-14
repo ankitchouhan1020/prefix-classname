@@ -1,11 +1,11 @@
 {
   "name": "prefix-codemod",
   "description": "Add unique prefix to classname in jsx files.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": "git@github.com:ankitchouhan1020/prefix-classname.git",
   "author": "Ankit Chouhan <ankitchouhan1020@gmail.com>",
   "bin": {
-    "prefix-codemod": "./bin/main.js"
+    "prefix-codemod": "./bin/main.ts"
   },
   "devDependencies": {
     "@types/jscodeshift": "^0.11.0",
