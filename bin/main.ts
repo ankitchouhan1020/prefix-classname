@@ -7,7 +7,7 @@ const fs = require('fs')
 const chalk = require('chalk')
 const CodemodErrorInstance = require('./utils/CodemodError')
 
-const jscodeshiftExecutable = require.resolve('.bin/jscodeshift')
+const jscodeshiftExecutable = require('jscodeshift')
 const transformsDir = path.resolve(__dirname, '../', 'transforms')
 
 const { argv } = yargs
