@@ -9,7 +9,7 @@ const transform: Transform = (file, api, option) => {
 
     const filePrefixMap = {};
     let hasModifications = false;
-
+    
     root
         // Find all JSX elements like div and other custom jsx element...
         .findJSXElements()
@@ -20,13 +20,13 @@ const transform: Transform = (file, api, option) => {
                 name: "className"
             },
             value: {
-                type: "StringLiteral"
+                type: "Literal"
             }
         })
-        .find(j.StringLiteral)
+        .find(j.Literal)
         .replaceWith(nodePath => {
             const { node } = nodePath;
-            const fileName = getFileName(file.path).toLowerCase();
+            const fileName = getFileName(file.path);
 
             // map prefix for a file, we don't want seperate random digit in each class prefix
             if (!filePrefixMap[fileName]) {
@@ -34,7 +34,7 @@ const transform: Transform = (file, api, option) => {
             }
 
             const classPrefix = filePrefixMap[fileName];
-            const oldClassName = node.value;
+            const oldClassName = node.value.toString();
             
             if (!oldClassName || oldClassName.includes(classPrefix)) {
                 return j.stringLiteral(oldClassName);
